@@ -1,0 +1,500 @@
+/* AÑADIDO POR LISHO */
+
+body {
+    background-color: darkslategrey;
+}
+
+/* input > #nombre #apellido1 #apellido2{
+    text-transform: uppercase;
+} */
+
+footer {
+
+    background-color: beige;
+    margin: 15px 0px 0px 0px;
+    padding: 15px 10px 25px 10px;
+}
+
+p.justificado {
+    text-indent: 40px;
+    text-align: justify;
+}
+
+p.parrafo {
+    color: beige;
+    /* font-size: 1em; */
+}
+
+.btn-cristal {
+    background-color:  rgba(255, 255, 255, 0.157);
+    margin: 15px 5px;
+    padding: 8px;
+    /* padding-top: 15px; */
+    z-index: 10990;
+    color: beige;
+    animation: aparecer 1s linear forwards;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.btn-cristal:hover {
+    background-color:rgba(77, 143, 128, 0.157); 
+  /*   margin: 15px 5px;
+    padding: 8px; */
+    /* padding-top: 15px; */
+    /* z-index: 10990; */
+     color: beige; /*
+    animation: aparecer 1s linear forwards;
+    align-items: center;*/
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  /*  border-radius: 5px;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5); */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.send-button{
+    background:  rgba(84, 199, 195, 0.602);
+    color: beige;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-color:#000000 !important;
+    }
+    
+.send-button:hover{
+    background:rgba(30, 63, 87, 0.248);
+    color: beige;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    }
+    
+
+.cristal {
+   /*  background-color:cadetblue ; */
+   background-color: rgba(255, 255, 255, 0.157); 
+  /*  width: 90vw; */
+   margin: 15px 5px;
+   padding: 8px;
+   padding-top: 15px;
+   
+   /* display: flex; 
+   width: 80%;
+   height: 15vw; */
+  /*  top: auto;
+   margin-top: 50px; */
+   /* bottom: 1vw;
+   left: 0px; */
+   z-index: 10990;
+  /*  position: fixed; */
+  /*  min-height: 40px;
+   max-height: 150px; */
+   animation: aparecer 1s linear forwards;
+   animation-delay: 7s;
+   align-items: center;
+   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+   border-radius: 5px;
+   overflow: hidden;
+   border-top: 1px solid rgba(255, 255, 255, 0.5);
+   border-left: 1px solid rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(1px);
+   -webkit-backdrop-filter: blur(1px);
+}
+
+.oculto{
+    visibility: hidden;
+    /* display:none; */
+    /*font-size: .8em; */
+    /* float: right; */
+    transition: all 1s ease-in-out;
+};
+
+#aus-form > div > div.cristal > div.oculto2 {
+    display: none;
+    /* display:none; */
+    /*font-size: .8em; */
+    float: right; 
+    transition-delay: 5s;
+    transition: all 5s ease-in-out;
+    
+    
+};
+
+div#circulo1 {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 50vw;
+    height: auto;
+    background: #5e8396;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+form {
+    padding: 10px 0;
+}
+
+#titulo_solicitud {
+
+    transform:scaleY(1.4);
+    font-family: Arial; 
+    font-weight: bold;
+    font-size: 1.8em; 
+    color: #172727; 
+    text-shadow: 0px 0px 9px #aabbcf;
+    margin: 10px 0px 20px 0px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select[id="cp"] {
+    /* width: 90%; */
+    /* display: block; */
+    margin-bottom: 8px;
+   /*  background-color: yellow; */
+   height: 60px;
+}
+
+#actividad {
+    transform:scaleY(1.5);
+    font-size: 1em; 
+   /*  transform: translateY(-5); */
+    font-weight: bolder;
+    /* text-align: justify; */
+    /* color: #172727;  */
+    /* text-shadow: 0px 0px 9px #aabbcf; */
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 1.5em;
+}
+
+#boton_leer_proyecto,
+#boton_leer_actividad {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+/* #aus-form > div > h2 {
+    transform:scaleY(1.4);
+    font-family: Arial; 
+    font-weight: bold;
+    font-size: 1.8em; 
+    color: #172727; 
+    text-shadow: 0px 0px 9px #aabbcf;/*
+    /* margin-top: 1.5em; */
+/* } */ 
+
+#logo_principal {
+    width: 80%;
+    padding: 15px 0px 15px 0px;
+}
+
+.linea_blanca{
+    border: 0;
+    height: 3px;
+    background: beige;
+    background-image: linear-gradient(to right,#333, #ccc, #333 );
+}
+
+.container_logo,
+.container_dnie {
+    text-align: center;
+    
+}
+
+.rojo {
+    color: rgba(165, 42, 42, .8);
+}
+
+.cabecera_modal_dark {
+    color: lightgray;
+    background-color: darkslategray;
+}
+
+.test-info-modificado {
+    color: darkslategray;
+}
+.color_fondo {
+    color:darkslategray;
+}
+
+.visto {
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+}
+/*
+#logo_ayto {
+    height: 4em;
+}
+*/
+.miembro_familia {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    
+}
+
+.boton_help {
+    border-radius: 100px;
+
+}
+
+.color_blanco {
+    color: cornsilk;
+}
+
+/***********/
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.g-button{
+color: #fff !important;
+border: 1px solid #EA4335;
+background: #ea4335 !important;
+width:100%;
+font-weight: 600;
+color:#fff;
+padding: 8px 25px;
+}
+.my-input{
+box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+cursor: text;
+/*padding: 8px 10px;*/
+transition: border .1s linear;
+}
+.header-title{
+margin-top: 5rem;
+margin-bottom: 2rem;
+}
+h1{
+font-size: 31px;
+line-height: 40px;
+font-weight: 600;
+color:#4c5357;
+}
+h2{
+color: #5e8396;
+font-size: 21px;
+line-height: 32px;
+font-weight: 400;
+}
+.login-or {
+position: relative;
+color: #aaa;
+margin-top: 10px;
+margin-bottom: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.span-or {
+display: block;
+position: absolute;
+left: 50%;
+top: -2px;
+margin-left: -25px;
+background-color: #fff;
+width: 50px;
+text-align: center;
+}
+.hr-or {
+height: 1px;
+margin-top: 0px !important;
+margin-bottom: 0px !important;
+}
+@media screen and (max-width:480px){
+h1{
+font-size: 26px;
+}
+h2{
+font-size: 20px;
+}
+}
+
+/* VALIDACIONES */
+
+.valid_input {
+    border-color: #2ce256;
+    border-top-width: 6px;
+}
+
+.no_valid_input {
+    border-color: #DA0600;
+    border-top-width: 6px;
+}
+
+.alert_input {
+    border-color: #FF8500;
+    border-top-width: 6px;
+}
+
+
+.valid_feedback {
+
+    color: rgb(255, 255, 255);
+   /*  background-color: #2ce256; */
+    padding: 5px 10px 0px 10px;
+    /* border-bottom: solid 4px #2ce256; */
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: -5px;
+    margin-right: 10px;
+    font-size: .8em;
+    /*color: #2ce256;
+    background-color: rgba(221,221,221,.5);*/
+}
+
+.valid_feedback::before {
+    font-family: "Font Awesome 5 Free"; content: "\f164  ";
+}
+
+.no_valid_feedback {
+    
+    color: #fff;
+    /* background-color: #DA0600; */
+    padding: 5px 10px 0px 10px;
+    /* border-bottom: solid 4px #DA0600; */
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: -5px;
+    margin-right: 10px;
+    font-size: .8em;
+
+}
+
+.no_valid_feedback::before {
+    font-family: "Font Awesome 5 Free"; content: "\f119  ";
+}
+
+.alert_feedback {
+    color: #fff;
+    /* background-color: #FF8500; */
+    padding: 5px 10px 0px 10px;
+   /*  border-bottom: solid 4px #FF8500; */
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: -5px;
+    margin-right: 10px;
+    font-size: .8em;
+
+}
+
+.alert_feedback::before {
+    font-family: "Font Awesome 5 Free"; content: "\f071  ";
+}
+
+.label_ingresos {
+    padding-right: 30px;
+}
+
+.invalid_alert {
+    width: 100%;
+    margin-top: .25rem;
+    color: #dc3545;
+    background-color: rgba(255,173,173,.7);
+    padding-left: 0px 10px;
+}
+
+.warning_alert {
+    width: 100%;
+    margin-top: .25rem;
+    color: #FF8500;
+    background-color: rgba(255,255,170,.7);
+    padding-left: 0px 10px;
+}
+
+
+/********** ENVIANDO **********************/
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #5f9ea0f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: 1s all;
+    opacity: 0;
+}
+.loading.show {
+    opacity: 1;
+    z-index: 9999;
+}
+
+.loading.no-show {
+    opacity: 0;
+    z-index: -1000;
+}
+.loading .spin {
+    border: 5px solid hsla(185, 100%, 62%, 0.2);
+    display: block;
+    border-top-color: #176168;
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+} 
+
+.loading .enviando_text h3{
+    
+    font-weight: 200;
+    margin: 0 0.5rem;
+    display: block;
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: infinite; /* don't forget to set a duration! */
+}
+
+swal-text {
+    text-align: center !important;
+}
+
+/* #info_proyecto > div > div > div.modal-body > div > div > div > img, */
+#container_logos > div > img,
+#container_dnie > div > img,
+#container_email > div > img {
+    height: 8vh;
+    width: auto;
+    padding: 8px 8px;
+}
+
+#flecha_directa{
+    /* height: 110px; */
+    display:none;
+    width: 40%;
+    max-width: 200px;
+    position: absolute;
+    margin-top: -95px;
+    margin-left: 8px;
+    text-shadow: black;
+}
+/* ALERTAS */
+
+.swal-text {
+    text-align: center;
+    color: rgb(47, 49, 73);
+}

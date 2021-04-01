@@ -1,0 +1,7 @@
+AuthName "pcos.puertasdigitales.es statistics"
+AuthType Basic
+AuthUserFile /home/puertasdigitales.es/domains/pcos.puertasdigitales.es/.stats-htpasswd
+require valid-user
+<Files .stats-htpasswd>
+deny from all
+</Files>

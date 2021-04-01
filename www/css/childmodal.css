@@ -1,0 +1,4 @@
+$(document).find('.child-modal').on('hidden.bs.modal', function () {
+    console.log('hiding child modal');
+    $('body').addClass('modal-open');
+});

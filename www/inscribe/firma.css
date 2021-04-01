@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+   width: auto;
+  height: auto;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+}
+
+.signature-pad {
+
+  background-color: lightgray;
+  width: auto;
+  height: auto;
+} 
+
+#contenedor_firma{
+  width: 90%;
+  overflow: hidden;
+}
