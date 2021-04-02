@@ -1,7 +1,7 @@
 <?php
 
 // Conectar a la base de datos
-$connect = mysqli_connect("localhost", "jovel", "N89--pRwxxx","jovel"); // servidor, user, pass, base
+$connect = mysqli_connect("db", "jovel", "N89--pRwxxx","jovel"); // servidor, user, pass, base
 mysqli_set_charset($connect, "utf8");
 
 $tabla="Pagina_EN";

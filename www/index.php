@@ -97,12 +97,23 @@ if(isset($_POST["lang"])){
 
                 <!-- Barra de búsqueda -->
                               
-                <div>
+            <!--     <div>
                 <form id="submit-button" method="post">
                 <input aria-label="palabra" name="palabra" placeholder="<?php echo $lang['Palabras Clave']; ?>">
                 <input id="Randall" type="submit" name="buscador" value="<?php echo $lang['Buscar']; ?>">
                 <input type="button" value="<?php echo $lang['Mostrar Resultados']; ?>" data-toggle='modal' data-target='#portfolioModalbus'>
                 </form>
+                </div>
+                <br/> -->
+
+                 <!-- Barra de búsqueda 2-->
+                              
+                <div>
+                    <form id="submit-button" method="post">
+                        <input id="palabra" aria-label="palabra" name="palabra" placeholder="<?php echo $lang['Palabras Clave']; ?>">
+                        <input id="buscar" type="button" name="buscador" value="<?php echo $lang['Buscar']; ?>" data-toggle='modal' data-target='#portfolioModalbus'>
+                        <!-- <input type="button" value="<?php echo $lang['Mostrar Resultados']; ?>" data-toggle='modal' data-target='#portfolioModalbus'> -->
+                    </form>
                 </div>
                 <br/>
 
@@ -126,47 +137,11 @@ if(isset($_POST["lang"])){
                                     </div>
 
                                     <!-- Lista de trámites -->
-                                    <div class="col-sm-12">
+                                    <div id="datosBusqueda" class="col-sm-12">
 
 <!-- La idea es que la web SIEMPRE abra el modal de resultados de búsqueda, pero hacemos la condicion de que para que lo abra debe existir el $_POST['buscador] con un "isset" -->
 
-<?php
-if ($_POST['buscador']){
-    // Tomamos el valor ingresado
-    $buscar = $_POST['palabra'];
 
-    // Si está vacío, lo informamos, sino realizamos la búsqueda
-    if (empty($buscar)){
-        echo "No se ha ingresado una cadena a buscar";
-    }else{
-            $query = "SELECT * FROM $tabla WHERE Etiquetas LIKE '%$buscar%' ORDER BY ID";
-            $resultset = mysqli_query($connect, $query) or die("error base de datos:". mysqli_error($connect));
-            $listaTramitesBus= array();
-                while($Tablabus = mysqli_fetch_array($resultset))
-                array_push($listaTramitesBus, $Tablabus);
-                    //Si ha resultados
-
-                             
-
-                     if (!empty($listaTramitesBus)) {
-                                            echo "<div class='row justify-content-center'>";
-											for ($bus = 0; $bus < count($listaTramitesBus); $bus++)
-											{
-                                                echo "<div class='col-md-6 col-lg-4 mb-5'><button class='btn' style='background-color: #FFF6D5' data-toggle='modal' data-target='#ModalBusA".$bus."'><img class='img-fluid' src='".$listaTramitesBus[$bus][7]."' alt='Logo Tramite Búsqueda' />";
-                                                echo "<div class='portfolio-item mx-auto' >
-                                                    ".$listaTramitesBus[$bus][2]."
-                                                    </div>
-												</button>";
-                                                echo "</div>";                                      
-											}
-											echo "</div>";
-        }else{
-            // En caso de no encontrar resultados
-            echo "No se encontraron resultados para: $buscar";
-        }
-    }
-}
-?>  
 									</div>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
@@ -1776,9 +1751,12 @@ if ($_POST['buscador']){
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script src="js/childmodal.js"></script>
-
+        <script src="js.js"></script>
         <!-- Widget UserWay-->
         <script>(function(d){var s = d.createElement("script");s.setAttribute("data-account", "kFD5yf3tfb");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)</script>
         <noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
+        
+        <script>var idioma = '<?php echo $_SESSION["lang"]; ?>'</script>
+        
     </body>
 </html>
