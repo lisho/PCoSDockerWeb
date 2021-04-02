@@ -34,6 +34,7 @@ $(document).ready(function () {
 
 
         // rerseteamos el campo de texto
+        data.palabra ="";
         $("#palabra").val("");
     });
 

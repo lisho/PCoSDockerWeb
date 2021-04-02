@@ -13,14 +13,16 @@ include('lang/'.$_POST['lang'].'.php');
    if (empty($buscar)){
        echo "No se ha ingresado una cadena a buscar";
    }else{
-       $query = "SELECT * FROM $tabla WHERE Etiquetas LIKE '%$buscar%' ORDER BY ID";
-           $resultset = mysqli_query($connect, $query) or die("error base de datos:". mysqli_error($connect));
-           $listaTramitesBus= array();
-               while($Tablabus = mysqli_fetch_array($resultset))
-               array_push($listaTramitesBus, $Tablabus);
-               echo print_r($count_results);
-                   //Si ha resultados
-        if ($count_results > 0) {
+        $query = "SELECT * FROM $tabla WHERE Etiquetas LIKE '%$buscar%' ORDER BY ID";
+        $resultset = mysqli_query($connect, $query) or die("error base de datos:". mysqli_error($connect));
+        $listaTramitesBus= array();
+            while($Tablabus = mysqli_fetch_array($resultset))
+            array_push($listaTramitesBus, $Tablabus);
+           /*  echo "CUENTA; ".print_r(count($listaTramitesBus[0])); */
+         /* echo print_r(count($Tablabus));  */
+          
+                //Si ha resultados
+        if (count($listaTramitesBus)) {
                             echo "<div class='row justify-content-center'>";
                             for ($bus = 0; $bus < count($listaTramitesBus); $bus++)
                             {
