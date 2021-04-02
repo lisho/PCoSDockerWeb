@@ -27,13 +27,24 @@ $(document).ready(function () {
             data: data,
             
             success: function (response) {
-                console.log(response)
+              
                 $("#datosBusqueda").html(response);
             }
-        });
+        }).then(
+            $.ajax({
+                type: "POST",
+                url: "traesubmodales.php",
+                data: data,
+                
+                success: function (response) {
+                   
+                    $("#portfolioModalbus").after(response);
+                }
+            })
+        );
 
 
-        // rerseteamos el campo de texto
+        // rerseteamos el campo de texto y su valor en el data
         data.palabra ="";
         $("#palabra").val("");
     });

@@ -95,18 +95,7 @@ if(isset($_POST["lang"])){
                     <div class="divider-custom-line"></div>
                 </div>
 
-                <!-- Barra de búsqueda -->
-                              
-            <!--     <div>
-                <form id="submit-button" method="post">
-                <input aria-label="palabra" name="palabra" placeholder="<?php echo $lang['Palabras Clave']; ?>">
-                <input id="Randall" type="submit" name="buscador" value="<?php echo $lang['Buscar']; ?>">
-                <input type="button" value="<?php echo $lang['Mostrar Resultados']; ?>" data-toggle='modal' data-target='#portfolioModalbus'>
-                </form>
-                </div>
-                <br/> -->
-
-                 <!-- Barra de búsqueda 2-->
+                 <!-- Barra de búsqueda -->
                               
                 <div>
                     <form id="submit-button" method="post">
@@ -117,7 +106,7 @@ if(isset($_POST["lang"])){
                 </div>
                 <br/>
 
- <div class="portfolio-modal modal fade" id="portfolioModalbus" tabindex="-1" role="dialog" aria-labelledby="ModalBus" aria-hidden="true">
+        <div class="portfolio-modal modal fade" id="portfolioModalbus" tabindex="-1" role="dialog" aria-labelledby="ModalBus" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                     <button class="close" type="button" data-dismiss="modal" aria-label="Cerrar">
@@ -139,7 +128,7 @@ if(isset($_POST["lang"])){
                                     <!-- Lista de trámites -->
                                     <div id="datosBusqueda" class="col-sm-12">
 
-<!-- La idea es que la web SIEMPRE abra el modal de resultados de búsqueda, pero hacemos la condicion de que para que lo abra debe existir el $_POST['buscador] con un "isset" -->
+                <!-- La idea es que la web SIEMPRE abra el modal de resultados de búsqueda, pero hacemos la condicion de que para que lo abra debe existir el $_POST['buscador] con un "isset" -->
 
 
 									</div>
@@ -154,7 +143,7 @@ if(isset($_POST["lang"])){
                 </div>
             </div>
         </div>
-
+        
         <!-- Portfolio Modal bus0.5-->
                     
                         <div class="portfolio-modal">
@@ -808,8 +797,7 @@ if(isset($_POST["lang"])){
                 </div>
             </div>
         </div>
-
-
+        
         <!-- Portfolio Modal 3.5-->
                     
                         <div class="portfolio-modal">
