@@ -40,14 +40,7 @@ $(document).ready(function () {
                     $("#datosSegundaBusqueda").html(response);
                 }
             })
-        ).then(
-            $('.portfolio-modal').on('hidden.bs.modal', function () {
-                console.log('hiding child modal');
-                $('body').addClass('modal-open');
-               
-            })    
         );
-
 
         // reseteamos el campo de texto y su valor en el data
         data.palabra ="";

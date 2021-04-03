@@ -478,7 +478,7 @@ if(isset($_POST["lang"])){
             </div>
         </div>
         
-        <div class='portfolio-modal'>
+        <div class='portfolio-modal child-modal'>
             <div class='row justify-content-center'>
                 <div class='col-lg-8'>
                     <div class='col-sm-12'>  
