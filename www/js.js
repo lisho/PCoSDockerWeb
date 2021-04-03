@@ -3,21 +3,19 @@
 $(document).ready(function () {
 
     console.log("leyendo js")
-    
     var textoBusqueda; 
-    var data ={'lang' : '', 'palabra' : ''};
+   /*  var data ={'lang' : '', 'palabra' : idioma}; */
+  
   
     $("#palabra").change(function (e) { 
         e.preventDefault();
         textoBusqueda = $("#palabra").val();
         data.palabra = textoBusqueda;
 
-    });
-
-    data.lang = idioma;
-            
+    });          
    
-    $("#buscar").click(function (e) { 
+    $("#formularioBuscar").on('submit', function(e){ 
+    
         e.preventDefault();
         
         console.log(data);
@@ -30,6 +28,7 @@ $(document).ready(function () {
               
                 $("#datosBusqueda").html(response);
             }
+            
         }).then(
             $.ajax({
                 type: "POST",
@@ -38,7 +37,7 @@ $(document).ready(function () {
                 
                 success: function (response) {
                    
-                    $("#portfolioModalbus").after(response);
+                    $("#datosSegundaBusqueda").html(response);
                 }
             })
         );

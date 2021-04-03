@@ -1,0 +1,17 @@
+
+/* Fondo del segundo modal */
+.child-modal {
+
+    background-color: darkslategrey;
+}
+
+#container_logos > div > img {
+    height: 8vh;
+    width: auto;
+    padding: 8px 8px;
+}
+
+#container_logos {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}

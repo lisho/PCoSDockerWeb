@@ -39,13 +39,18 @@ if(isset($_POST["lang"])){
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />       
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/custom_styles.css" rel="stylesheet" />        
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><?php echo $lang['titulo']; ?></a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                   
+                        <img src="./inscribe/img/logo_ayto_1.svg" alt="" height="65px" >
+               
+                </a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <?php echo $lang['Menu']; ?>
                     <i class="fas fa-bars"></i>
@@ -98,111 +103,19 @@ if(isset($_POST["lang"])){
                  <!-- Barra de búsqueda -->
                               
                 <div>
-                    <form id="submit-button" method="post">
-                        <input id="palabra" aria-label="palabra" name="palabra" placeholder="<?php echo $lang['Palabras Clave']; ?>">
-                        <input id="buscar" type="button" name="buscador" value="<?php echo $lang['Buscar']; ?>" data-toggle='modal' data-target='#portfolioModalbus'>
-                        <!-- <input type="button" value="<?php echo $lang['Mostrar Resultados']; ?>" data-toggle='modal' data-target='#portfolioModalbus'> -->
+                    <form id="formularioBuscar">
+                       
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <input id="palabra" class="form-control" aria-label="palabra" name="palabra" placeholder="<?php echo $lang['Palabras Clave']; ?>">
+                            <button class="btn btn-primary btn-xl" id="buscar" type="submit" name="buscador" data-toggle='modal' data-target='#portfolioModalbus'><?php echo $lang['Buscar']; ?></button>
+                            </button>
+                        </div>
+                        
                     </form>
                 </div>
+
                 <br/>
 
-        <div class="portfolio-modal modal fade" id="portfolioModalbus" tabindex="-1" role="dialog" aria-labelledby="ModalBus" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Cerrar">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h3 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="ModalBus"><?php echo $lang['Busqueda']; ?></h3>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-
-                                    <!-- Lista de trámites -->
-                                    <div id="datosBusqueda" class="col-sm-12">
-
-                <!-- La idea es que la web SIEMPRE abra el modal de resultados de búsqueda, pero hacemos la condicion de que para que lo abra debe existir el $_POST['buscador] con un "isset" -->
-
-
-									</div>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        <?php echo $lang['Cerrar']; ?>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Portfolio Modal bus0.5-->
-                    
-                        <div class="portfolio-modal">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-
-                                    <!-- Lista de trámites -->
-                                    <div class="col-sm-12">
-										<?php
-                                            $query = "SELECT * FROM $tabla WHERE Etiquetas LIKE '%$buscar%' ORDER BY ID";
-                                            $resultset = mysqli_query($connect, $query) or die("error base de datos:". mysqli_error($connect));
-                                            $listaTramitesBus= array();
-                                            while($Tablabus = mysqli_fetch_array($resultset))
-                                            array_push($listaTramitesBus, $Tablabus);
-											
-											echo "<div class='row justify-content-center'>";
-											for ($bus = 0; $bus < count($listaTramitesBus); $bus++)
-											{
-                                                
-                                                // MODAL DEL TRÁMITE
-
-                                                echo "<div class='modal fade child-modal' id='ModalBusA".$bus."' tabindex='-1' role='dialog' aria-labelledby='ModalBus".$bus."' aria-hidden='true'>";
-                                                    echo "<div class='modal-dialog modal-dialog-centered' role='document'>";
-                                                        echo "<div class='modal-content'>";
-                                                            
-                                                            echo "
-                                                            <button type='button' class='close' data-dismiss='modal' aria-label='Cerrar'>
-                                                                <span aria-hidden='true'>&times;</span>
-                                                            </button>";
-                                                                
-                                                            echo "
-                                                            <div class='modal-body text-left'>
-                                                            <h4 class='modal-title text-center' id='ModalBus".$bus."'>".$listaTramitesBus[$bus][2]."</h4>
-                                                            <br/>
-                                                                <h5>".$lang['Descripcion']."</h5>
-                                                                <p>".$listaTramitesBus[$bus][4]."</p><br/>
-                                                                <h5>".$lang['Detalles']."</h5>
-                                                                <p>".$listaTramitesBus[$bus][6]."</p><br/>
-                                                                <h5>".$lang['Telefono']."</h5>
-                                                                <p>".$listaTramitesBus[$bus][5]."</p><br/>
-                                                                <h5>URL:</h5>
-                                                                <p><a href=".$listaTramitesBus[$bus][3]." target=_blank class='btn btn-secondary'>".$lang['Iniciar Tramite']."</a></p><br/>
-                                                                <br/>
-                                                                <div class='row justify-content-center'>
-                                                                  <button type='button' class='btn btn-primary' data-dismiss='modal'>".$lang['Cerrar']."</button>
-                                                              </div>  
-                                                            </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  ";
-											}
-											echo "</div>";
-										?>
-									</div>
-                                    
-                                </div>
-                            </div>
-                         </div>
 
 
                 <!-- Portfolio Grid Items -->
@@ -470,7 +383,7 @@ if(isset($_POST["lang"])){
                         <br/>
                         <!-- Footer Social Icons-->
                         <p class="lead mb-0">
-                            <a class="btn btn-outline-light btn-social mx-1" aria-label="Ir a WhatsApp" href="#!"><i class="fab fa-fw fa-whatsapp"></i></a>
+                            <a class="btn btn-outline-light btn-social mx-1" aria-label="Ir a WhatsApp" href="https://api.whatsapp.com/send?phone=34648650412"><i class="fab fa-fw fa-whatsapp"></i></a>
                             <a class="btn btn-outline-light btn-social mx-1" aria-label="Ir a Telegram" href="#!"><i class="fab fa-fw fa-telegram"></i></a>
                         </p>
 
@@ -493,8 +406,27 @@ if(isset($_POST["lang"])){
                     </div>
                 </div>
             </div>
+
+         <!-- Copyright Section-->
+        <div>
+
+       
         </footer>
+
         <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white"  style="background-color:aliceblue">
+
+            
+                <div id="container_logos" class="row justify-content-center align-items-center" style="background-color:aliceblue; max-width: 100vw;">
+                    <div class="col-xs-auto logo_modal"><img src="./inscribe/img/logo_FSE.svg" alt=""></div>
+                    <div class="col-xs-auto logo_modal"><img src="./inscribe/img/logo_ayto_1 copy.svg" alt=""></div>
+                    <div class="col-xs-auto logo_modal"><img src="./inscribe/img/logo_jcyl.svg" alt=""></div>
+                    <div class="col-xs-auto logo_modal"><img src="./inscribe/img/logo_ecyl.svg" alt=""></div>
+                    <div class="col-xs-auto logo_modal"><img src="./inscribe/img/logo_garantia.png" alt=""></div>
+                    <div class="col-xs-auto logo_modal"><img src="./inscribe/img/logo_edis_1.svg" alt=""></div>
+                    <div class="col-xs-auto logo_modal"><img src="./inscribe/img/logo_puertas_digitales.svg" alt=""></div>
+                </div>
+        </div>    
         <div class="copyright py-4 text-center text-white">
             <div class="container"><small><?php echo $lang['Copyright 2021 Ayuntamiento de Leon. Todos los derechos reservados.']; ?></small></div>
         </div>
@@ -505,6 +437,66 @@ if(isset($_POST["lang"])){
             <a class="js-scroll-trigger d-block text-center text-white rounded" aria-label="Volver a Inicio" href="#page-top"><i class="fa fa-chevron-up"></i></a>
         </div>
 
+        <!-- MODALES DE LAS BUSQUEDAS -->
+        
+
+        <div class="portfolio-modal modal fade" id="portfolioModalbus" tabindex="-1" role="dialog" aria-labelledby="ModalBus" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h3 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="ModalBus"><?php echo $lang['Busqueda']; ?></h3>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+
+                                    <!-- Lista de trámites -->
+                                    <div id="datosBusqueda" class="col-sm-12">
+
+                                    <!-- La idea es que la web SIEMPRE abra el modal de resultados de búsqueda, pero hacemos la condicion de que para que lo abra debe existir el $_POST['buscador] con un "isset" -->
+
+
+									</div>
+                                    <button class="btn btn-primary" data-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        <?php echo $lang['Cerrar']; ?>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class='portfolio-modal'>
+            <div class='row justify-content-center'>
+                <div class='col-lg-8'>
+                    <div class='col-sm-12'>  
+                        <div class='row justify-content-center' id="datosSegundaBusqueda">
+                            
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div> 
+        
+        <!-- Portfolio Modal bus0.5-->
+                    
+                       
+
+
+
+        
         <!-- MODALES DE LOS PORTFOLIOS -->
 
         <!-- Portfolio Modal 1-->
@@ -540,8 +532,14 @@ if(isset($_POST["lang"])){
 											echo "<div class='row justify-content-center'>";
 											for ($a = 0; $a < count($listaTramitesSACYL); $a++)
 											{
-                                                echo "<div class='col-md-6 col-lg-4 mb-5 portfolio-item mx-auto'><button class='btn' style='background-color: #779ECB' data-toggle='modal' data-target='#ModalA".$a."'><img class='img-fluid' src='".$listaTramitesSACYL[$a][7]."' alt='Logo Trámite SACYL' />";
-                                                echo $listaTramitesSACYL[$a][2]."
+                                                echo "<div class='col-md-6 col-lg-4 mb-5 portfolio-item mx-auto'>
+                                                    <button class='btn' 
+                                                        style='background-color: #779ECB' data-toggle='modal' 
+                                                        data-target='#ModalA".$a."'><img class='img-fluid' 
+                                                        src='".$listaTramitesSACYL[$a][7]."' alt='Logo Trámite SACYL' />";
+
+                                                        echo "<div class='portfolio-item mx-auto' >
+                                                        ".$listaTramitesSACYL[$a][2]."</div>
                                                 </button>";
                                                 echo "</div>";                                      
 											}
@@ -1744,7 +1742,10 @@ if(isset($_POST["lang"])){
         <script>(function(d){var s = d.createElement("script");s.setAttribute("data-account", "kFD5yf3tfb");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)</script>
         <noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
         
-        <script>var idioma = '<?php echo $_SESSION["lang"]; ?>'</script>
+        <script>
+            var idioma = '<?php echo $_SESSION["lang"]; ?>';
+             var data ={'lang' : idioma, 'palabra' : ""};
+        </script>
         
     </body>
 </html>
