@@ -3,7 +3,7 @@ services:
     www:
         build: .
         ports: 
-            - 8100:80
+            - 6100:80
         volumes:
             - ./www:/var/www/html/
         links:
@@ -13,7 +13,7 @@ services:
     db:
         image: mysql:8.0
         ports: 
-            - "3306:3306"
+            - "6306:3306"
         command: --default-authentication-plugin=mysql_native_password
         environment:
             MYSQL_DATABASE: jovel
@@ -31,7 +31,7 @@ services:
         links: 
             - db:db
         ports:
-            - 8110:80
+            - 6110:80
         environment:
             MYSQL_USER: user
             MYSQL_PASSWORD: test

@@ -1743,8 +1743,15 @@ if(isset($_POST["lang"])){
         <noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
         
         <script>
-            var idioma = '<?php echo $_SESSION["lang"]; ?>';
-             var data ={'lang' : idioma, 'palabra' : ""};
+
+                '<?php echo $_SESSION["lang"]; ?>' ?  
+                    idioma = '<?php echo $_SESSION["lang"]; ?>' :
+                    idioma = 'ES';
+               
+                var data ={'lang' : idioma, 'palabra' : ""};
+                
+     
+            
              
         </script>
         
