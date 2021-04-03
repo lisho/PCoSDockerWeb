@@ -102,7 +102,7 @@ if(isset($_POST["lang"])){
 
                  <!-- Barra de búsqueda -->
                               
-                <div>
+                
                     <form id="formularioBuscar">
                        
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -112,7 +112,7 @@ if(isset($_POST["lang"])){
                         </div>
                         
                     </form>
-                </div>
+                
 
                 <br/>
 
@@ -1745,6 +1745,7 @@ if(isset($_POST["lang"])){
         <script>
             var idioma = '<?php echo $_SESSION["lang"]; ?>';
              var data ={'lang' : idioma, 'palabra' : ""};
+             
         </script>
         
     </body>

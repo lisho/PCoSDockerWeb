@@ -20,7 +20,7 @@ include('lang/'.$_POST['lang'].'.php');
             
             // MODAL DEL TRAMITE
   
-            echo "<div class='modal fade child-modal' id='ModalBus".$bus."' tabindex='-1' role='dialog' aria-labelledby='ModalBus".$bus."' aria-hidden='true'>";
+            echo "<div class='modal fade child-modal' id='ModalBus".$bus."' tabindex='-1' role='dialog' aria-hidden='true' aria-labelledby='ModalB".$bus."'>";
                 echo "<div class='modal-dialog modal-dialog-centered' role='document'>";
                     echo "<div class='modal-content'>";
                         
@@ -44,7 +44,7 @@ include('lang/'.$_POST['lang'].'.php');
                             </br>
         
                             <div class='row justify-content-center'>
-                                <button type='button' class='btn btn-primary' data-dismiss='modal' data-uw-styling-context='true'>".$lang['Cerrar']."</button>
+                                <button type='button' class='btn btn-primary' data-dismiss='modal'>".$lang['Cerrar']."</button>
                             </div>
                         </div>
                     </div>

@@ -6,7 +6,7 @@ $(document).ready(function () {
     var textoBusqueda; 
    /*  var data ={'lang' : '', 'palabra' : idioma}; */
   
-  
+    /* Guardamos la clave de busqueda en el objeto data cada vez que cambia el input*/
     $("#palabra").change(function (e) { 
         e.preventDefault();
         textoBusqueda = $("#palabra").val();
@@ -14,10 +14,10 @@ $(document).ready(function () {
 
     });          
    
+
     $("#formularioBuscar").on('submit', function(e){ 
     
         e.preventDefault();
-        
         console.log(data);
         $.ajax({
             type: "POST",
@@ -40,13 +40,20 @@ $(document).ready(function () {
                     $("#datosSegundaBusqueda").html(response);
                 }
             })
+        ).then(
+            $('.portfolio-modal').on('hidden.bs.modal', function () {
+                console.log('hiding child modal');
+                $('body').addClass('modal-open');
+               
+            })    
         );
 
 
-        // rerseteamos el campo de texto y su valor en el data
+        // reseteamos el campo de texto y su valor en el data
         data.palabra ="";
         $("#palabra").val("");
     });
 
+   
 
 });
